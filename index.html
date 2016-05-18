@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Web Audio Synth</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="main.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+
+  <container id="container">
+    <header>
+      <h2>Synth</h2>
+    </header>
+
+    <!-- CONTROLS -->
+    <div id="OctWavCtrls">
+      <div id="OctCtrls">
+        <div id="OctUp" class="CtrlBtns">
+          (+)
+        </div>
+        <div id="OctDisplay" class="displays">
+          1
+        </div>
+        <div id="OctDown" class="CtrlBtns">
+(-)
+        </div>
+      </div>
+
+      <div id="WavCtrls">
+        <div id="WavUp" class="CtrlBtns">
+          (+)
+        </div>
+        <div id="WavDisplay" class="displays">
+
+        </div>
+        <div id="WavDown" class="CtrlBtns">
+          (-)
+        </div>
+      </div>
+    </div>
+      <!-- END CONTROLS -->
+
+      <!-- KEYBOARD -->
+      <div id="keyboard">
+        <canvas id="canvas"></canvas>
+      </div>
+
+
+
+
+
+</container>
+
+
+<!-- <script src="OscAPI.js"></script> -->
+<script src="script/data.js"></script>
+<!-- <script src="script/AudioContextMonkeyPatch.js"></script> -->
+<script src="setFreq.js"></script>
+<script src="waveTypes.js"></script>
+<script src="keyFreq.js"></script>
+<script src="keyObj.js"></script>
+<script src="createKeys.js"></script>
+
+
+
+
+  <!-- <script src="script/data.js"></script>
+  <script src="app.js"></script> -->
+
+</body>
+</html>
