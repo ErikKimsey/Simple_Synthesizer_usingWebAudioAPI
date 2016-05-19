@@ -5,13 +5,13 @@
 
 
 var CnvsKey = (function(){
-  cantxt.fillStyle = 'gray';
-  cantxt.beginPath();
-  cantxt.moveTo(,);
+  canvtxt.fillStyle = 'gray';
+  canvtxt.beginPath();
+  canvtxt.moveTo(,);
   //draw egg
-  cantxt.closePath();
-  cantxt.fill();
-  cantxt.lineWidth = 4;
-  cantxt.strokeStyle = '#00ff00';
-  cantxt.stroke();
+  canvtxt.closePath();
+  canvtxt.fill();
+  canvtxt.lineWidth = 4;
+  canvtxt.strokeStyle = '#00ff00';
+  canvtxt.stroke();
 });
