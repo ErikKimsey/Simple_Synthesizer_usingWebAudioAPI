@@ -13,4 +13,4 @@ At completion, the user will be able to:
 
 Disclaimer
 ----------
-This project is in its very infancy, 2 days old as of May 18, 2016.  That being said, at the moment, the primary functions of initializing the audio context, creating the keyboard keys and applying their wave types are all in separate files.  In the following days, I hope to put them together into one file and get some simply UI together with Canvas.
+This project is in its very infancy, 2 days old as of May 18, 2016.  That being said, at the moment, the primary functions of initializing the audio context, creating the keyboard keys and applying their wave types are all in separate files.  In the following days, I hope to put them together into one file and get some simple UI together with Canvas.
