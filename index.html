@@ -5,8 +5,8 @@
   <meta charset="utf-8">
 
   <title>Web Audio Synth</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="Synthesizer written using the Web Audio API." content="Dub Synth">
+  <meta name="Erik Kimsey" content="Front-End Developer -> www.erikkimsey.com">
 
   <link rel="stylesheet" href="main.css">
 
@@ -14,14 +14,16 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-
 <body>
-
 
   <container id="container">
     <header>
       <h2>Synth</h2>
     </header>
+
+    <div id="elem">
+
+    </div>
 
     <!-- CONTROLS -->
     <div id="OctWavCtrls">
@@ -53,7 +55,7 @@
 
       <!-- KEYBOARD -->
       <div id="keyboard">
-        <canvas id="canvas"></canvas>
+
       </div>
 
 
@@ -63,14 +65,19 @@
 </container>
 
 
-<!-- <script src="OscAPI.js"></script> -->
-<script src="script/data.js"></script>
-<!-- <script src="script/AudioContextMonkeyPatch.js"></script> -->
-<script src="setFreq.js"></script>
+<script src="delay.js"></script>
 <script src="waveTypes.js"></script>
 <script src="keyFreq.js"></script>
+<script src="setFreq.js"></script>
 <script src="keyObj.js"></script>
+
+<script src="createElems.js"></script>
+<script src="keyPress.js"></script>
 <script src="createKeys.js"></script>
+
+<script src="app.js"></script>
+
+
 
 
 

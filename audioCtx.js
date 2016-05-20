@@ -1,16 +1,7 @@
 'use strict';
 
 
-
-var ctx = (function(){
-
+(function(){
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  var synth = audioCtx.createOscillator();
-
-    synth.type =
-
-
-
-
-
-})
+  console.log(audioCtx);
+})(window);
