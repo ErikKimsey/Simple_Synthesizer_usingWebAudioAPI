@@ -23,7 +23,7 @@ body {
   background-color: black;
 }
 
-#OctWavCtrls {
+#GainWavCtrls {
   /*position: relative;*/
   display: flex;
   /*display: block;*/
@@ -34,7 +34,7 @@ body {
   justify-content: center;
 }
 
-#OctCtrls {
+#GainCtrls {
 position: relative;
   width:40%;
   height:90%;
@@ -42,7 +42,7 @@ position: relative;
   justify-content: center;
 }
 
-#OctUp {
+#GainUp {
   position: relative;
 
   background-color: white;
@@ -50,14 +50,14 @@ position: relative;
   margin-right: auto;
 }
 
-#OctDisplay {
+#GainDisplay {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 
 }
 
-#OctDown {
+#GainDown {
   position: relative;
   background-color: white;
   margin-left: auto;

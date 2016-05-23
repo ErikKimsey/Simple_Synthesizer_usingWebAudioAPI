@@ -8,7 +8,8 @@ No repeated firing should occur when hold key down, to sustain play of a note.
 var keyCodes = [90, 83, 88, 68, 67, 86, 71, 66, 72, 78, 74, 77, 188];
 var i = 0;
 var fired = false;
-var audioCtx = new AudioContext(), osc;
+var audioCtx = new AudioContext(),
+  osc;
 // var a = fruits.indexOf("Apple");
 
 window.addEventListener('keydown', function(e){
