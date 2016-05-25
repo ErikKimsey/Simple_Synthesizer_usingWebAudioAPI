@@ -2,10 +2,8 @@
 
 var keyboard = document.getElementById('keyboard');
 var element = document.getElementsByClassName('key');
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-
-
-
-      // this.osc = audioCtx.createOscillator();
-      // this.osc.frequency.value = keyArr[i].freq;
-      // this.osc.type = keyArr[i].waveType;
+/*
+** Draw key elements
+*/
