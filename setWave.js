@@ -4,14 +4,17 @@
 // wavIndex is from waveTypes[wavIndex]
 function setWave(posOrNeg){
   if(posOrNeg < 0 || posOrNeg > waveTypes.length){
-    Key.waveType = waveTypes[wavIndex];
+    // Key.waveType = waveTypes[wavIndex];
+    return;
   }
   if(posOrNeg && wavIndex < waveType.length){
-    wavIndex++;
-    Key.waveType = waveTypes[wavIndex];
+    wavIndex = wavIndex + 1;
+    // Key.waveType = waveTypes[wavIndex];
+    createKeys(wavIndex);
   }
   if(posOrNeg && wavIndex >= 0){
-    wavIndex--;
+    wavIndex = wavIndex - 1;
     Key.waveType = waveTypes[wavIndex];
+    createKeys(wavIndex);
   }
 }
