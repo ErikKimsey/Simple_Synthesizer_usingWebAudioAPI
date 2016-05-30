@@ -14,25 +14,6 @@ var Synth = (function(){
   var keyArr = [];
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-  function init(){
-    /*
-    ** 1. Create keys,
-    ** 2. Draw HTML,
-    ** 3. Set up so that keys can play.
-    */
-      createKeys();
-  }
-
-  // Creates array of new Key objects.
-  // createKeys()
-
-  function createKeys(){
-    for(var i = 40; i < 53; i++){
-      keyArr[i] = new Key(i, 0);
-      paintKeyElems(i-39);
-    }
-  }
-
   function paintKeyElems(ind){
       var el = document.createElement('div');
       el.setAttribute('class', 'key');
@@ -41,21 +22,24 @@ var Synth = (function(){
       keyboard.appendChild(el);
   }
 
+  function createKeys(){
+    for(var i = 40; i < 53; i++){
+      keyArr[i] = new Key(i, 0);
+      paintKeyElems(i-39);
+    }
+  }
 
+  function init(){
+      createKeys();
+  }
 
-
-
-  window.addEventListener('keydown', function(e){
-
+  function keyDown(e){
     if(!fired){
       fired = true;
-
       var kv = e.which,
       a = keyCodes.indexOf(kv);
       console.log(a);
       console.log(kv);
-
-
       if(kv == keyCodes[a]){
         osc = audioCtx.createOscillator();
         osc.frequency.value = keyArr[a].freq;
@@ -65,12 +49,14 @@ var Synth = (function(){
         console.log("yes");
       }
     }
+  };
 
-  });
-
-  window.addEventListener('keyup', function(e){
+  function keyUp(){
     fired = false;
     osc.stop();
-  });
+  }
+
+  window.addEventListener('keydown', keyDown, false);
+  window.addEventListener('keyup', keyUp, false);
 
 });

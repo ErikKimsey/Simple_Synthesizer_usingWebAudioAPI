@@ -2,7 +2,6 @@
 
 
 var Key = (function(keyNum, wavIndx){
-
   this.keyNum = keyNum;
   this.freq = keyFreq(keyNum);
   this.waveType = waveTypes[wavIndx];
@@ -15,5 +14,4 @@ var Key = (function(keyNum, wavIndx){
     var power = (n - 49)/12;
     return Math.pow(2, power)*440;
   }
-
 });
