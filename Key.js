@@ -4,8 +4,8 @@
 var Key = (function(keyNum, wavIndx){
   this.keyNum = keyNum;
   this.freq = keyFreq(keyNum);
-  this.waveType = waveTypes[wavIndx];
-  this.keyCode = keyCodes[someIndex]; //index needs to be determined and setKeyCode needs to be created.
+  this.type = Data.waveTypes[wavIndx];
+  this.keyCode = Data.keyCodes[keyNum]; //index needs to be determined and setKeyCode needs to be created.
   console.log(this);
 
   // "Railsback Curve": Algorithm for piano key frequency (Hz),

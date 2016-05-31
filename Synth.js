@@ -12,7 +12,7 @@ var Synth = (function(){
   var keyboard = document.getElementById('keyboard');
   var element = document.getElementsByClassName('key');
   var keyArr = [];
-  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   function paintKeyElems(ind){
       var el = document.createElement('div');
@@ -29,34 +29,36 @@ var Synth = (function(){
     }
   }
 
-  function init(){
-      createKeys();
-  }
 
-  function keyDown(e){
+
+  window.addEventListener('keydown', function keyDown(e){
     if(!fired){
       fired = true;
       var kv = e.which,
-      a = keyCodes.indexOf(kv);
+      a = Data.keyCodes.indexOf(kv);
       console.log(a);
       console.log(kv);
-      if(kv == keyCodes[a]){
+      if(kv == Data.keyCodes[a]){
         osc = audioCtx.createOscillator();
-        osc.frequency.value = keyArr[a].freq;
+        osc.frequency.value = keyArr[a+40].freq;
         osc.type = "triangle";
         osc.connect(audioCtx.destination);
         osc.start(0);
         console.log("yes");
       }
     }
-  };
+  });
 
-  function keyUp(){
+  window.addEventListener('keyup', function keyUp(e){
     fired = false;
     osc.stop();
+  });
+
+  return {
+    createKeys : createKeys
   }
 
-  window.addEventListener('keydown', keyDown, false);
-  window.addEventListener('keyup', keyUp, false);
+})()
 
-});
+// window.addEventListener('keydown', keyDown, false);
+// window.addEventListener('keyup', keyUp, false);

@@ -14,6 +14,6 @@ var Data = (function(){
   return {
     waveTypes : waveTypes,
     keyCodes : keyCodes
-  };
+  }
 
-});
+})();

@@ -5,6 +5,6 @@
 **
 */
 
-(function(){
-    window.onload = Synth.init();
-});
+window.onload = function(){
+      Synth.createKeys();
+};
