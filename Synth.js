@@ -7,12 +7,15 @@
 
 var Synth = (function(){
 
-  var i = 0;
-  var fired = false, osc;
-  var keyboard = document.getElementById('keyboard');
-  var element = document.getElementsByClassName('key');
-  var keyArr = [];
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  var i = 0,
+  _prevKeyDown = {},
+  keyboard = document.getElementById('keyboard'),
+  element = document.getElementsByClassName('key'),
+  keyArr = new Array(),
+  audioCtx = new (window.AudioContext || window.webkitAudioContext),
+  gain = audioCtx.createGain();
+
+  gain.connect(audioCtx.destination);
 
   function paintKeyElems(ind){
       var el = document.createElement('div');
@@ -24,41 +27,77 @@ var Synth = (function(){
 
   function createKeys(){
     for(var i = 40; i < 53; i++){
-      keyArr[i] = new Key(i, 0);
+      // keyArr[i] = new Key(i, 0);
       paintKeyElems(i-39);
     }
   }
 
-
-
-  window.addEventListener('keydown', function keyDown(e){
-    if(!fired){
-      fired = true;
-      var kv = e.which,
-      a = Data.keyCodes.indexOf(kv);
-      console.log(a);
-      console.log(kv);
-      if(kv == Data.keyCodes[a]){
-        osc = audioCtx.createOscillator();
-        osc.frequency.value = keyArr[a+40].freq;
-        osc.type = "triangle";
-        osc.connect(audioCtx.destination);
-        osc.start(0);
-        console.log("yes");
+  function _downKey(ev){
+    var kD = ev.which,
+    note = Data.keyCodes.indexOf(kD);
+      if( _prevKeyDown[ kD ] == null ){
+          _prevKeyDown[ kD ] = {};
       }
-    }
-  });
+      _prevKeyDown[ kD ][ note ] = true;
+  };
 
-  window.addEventListener('keyup', function keyUp(e){
-    fired = false;
-    osc.stop();
-  });
+  function _upKey(ev){
+      var kD = ev.which,
+      note = Data.keyCodes.indexOf(kD);
+      if( _prevKeyDown[ kD ] != null ){
+          _prevKeyDown[ kD ][ note ] = null;
+      }
+  };
+
+  function _isKeyDown(ev){
+    var kD = ev.which,
+    note = Data.keyCodes.indexOf(kD);
+      var result = false;
+      if(_prevKeyDown[kD] != null ){
+          if(_prevKeyDown[kD][note] == true ){
+              result = true;
+          }
+      }
+      return result;
+  }
+
+  function keyDown(ev){
+    if(!_isKeyDown(ev)){
+        // your once-keydown handler here
+        var kD = ev.which,
+        note = Data.keyCodes.indexOf(kD);
+        console.log(kD, note);
+        noteOn(note);
+        _downKey(ev);
+    }
+  }
+
+  function noteOn(note){
+      keyArr[note] = new Key(note);
+  }
+
+  function keyUp(ev){
+    _upKey(ev);
+    var kD = ev.which,
+    note = Data.keyCodes.indexOf(kD);
+    console.log(kD, note);
+    noteOff(note);
+  }
+
+  function noteOff(note){
+    keyArr[note].noteOff();
+    // Remove any DOM or style change
+  }
 
   return {
-    createKeys : createKeys
+    createKeys : createKeys,
+    gain : gain,
+    keyDown : keyDown,
+    keyUp : keyUp,
+    audioCtx : audioCtx,
   }
 
 })()
 
-// window.addEventListener('keydown', keyDown, false);
-// window.addEventListener('keyup', keyUp, false);
+window.addEventListener('keydown', Synth.keyDown, false);
+window.addEventListener('keyup', Synth.keyUp, false);
