@@ -1,20 +1,15 @@
 'use strict';
-// click "change wave button ('+' or '-')",
-// calls setWave(['+' or '-'])
-// wavIndex is from waveTypes[wavIndex]
-function setWave(posOrNeg){
-  if(posOrNeg < 0 || posOrNeg > waveTypes.length){
-    // Key.waveType = waveTypes[wavIndex];
+
+function setWave(curInd){
+  if(curInd < 0 || curInd > waveTypes.length){
     return;
   }
-  if(posOrNeg && wavIndex < waveType.length){
+  if(curInd && wavIndex < waveType.length){
     wavIndex = wavIndex + 1;
-    // Key.waveType = waveTypes[wavIndex];
-    createKeys(wavIndex);
+    return wavIndex;
   }
-  if(posOrNeg && wavIndex >= 0){
+  if(curInd && wavIndex >= 0){
     wavIndex = wavIndex - 1;
-    Key.waveType = waveTypes[wavIndex];
-    createKeys(wavIndex);
+    return wavIndex;
   }
 }

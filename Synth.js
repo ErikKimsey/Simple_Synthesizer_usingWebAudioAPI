@@ -8,10 +8,20 @@
 var Synth = (function(){
 
   var i = 0,
-  _prevKeyDown = {},
+  wavIndx = 0;
+  var waveTypes = [
+    'sine',
+    'square',
+    'sawtooth',
+    'triangle'
+  ];
+  var _prevKeyDown = {},
   keyboard = document.getElementById('keyboard'),
   element = document.getElementsByClassName('key'),
   keyArr = new Array(),
+  wavUp = document.getElementById('WavUp'),
+  wavDown = document.getElementById('WavDown'),
+  wavDisp = document.getElementById('WavDisplay'),
   audioCtx = new (window.AudioContext || window.webkitAudioContext),
   gain = audioCtx.createGain();
 
@@ -27,10 +37,26 @@ var Synth = (function(){
 
   function createKeys(){
     for(var i = 40; i < 53; i++){
-      // keyArr[i] = new Key(i, 0);
       paintKeyElems(i-39);
     }
   }
+
+  function displayWave(indx){
+    wavDisp.innerHTML = waveTypes[indx];
+  }
+
+
+  function setWave(){
+    if(wavIndx < waveTypes.length){
+      wavIndx = wavIndx + 1;
+      displayWave(wavIndx);
+    }
+    if(wavIndx >= waveTypes.length){
+        wavIndx = 0;
+        displayWave(wavIndx);
+    }
+  }
+  wavDisp.onclick = setWave;
 
   function _downKey(ev){
     var kD = ev.which,
@@ -39,7 +65,7 @@ var Synth = (function(){
           _prevKeyDown[ kD ] = {};
       }
       _prevKeyDown[ kD ][ note ] = true;
-  };
+  }
 
   function _upKey(ev){
       var kD = ev.which,
@@ -47,7 +73,7 @@ var Synth = (function(){
       if( _prevKeyDown[ kD ] != null ){
           _prevKeyDown[ kD ][ note ] = null;
       }
-  };
+  }
 
   function _isKeyDown(ev){
     var kD = ev.which,
@@ -66,21 +92,21 @@ var Synth = (function(){
         // your once-keydown handler here
         var kD = ev.which,
         note = Data.keyCodes.indexOf(kD);
-        console.log(kD, note);
-        noteOn(note);
-        _downKey(ev);
+        if(Data.keyCodes.indexOf(kD) >= 0){
+          noteOn(note);
+          _downKey(ev);
+        }
     }
   }
 
   function noteOn(note){
-      keyArr[note] = new Key(note);
+      keyArr[note] = new Key(note, wavIndx);
   }
 
   function keyUp(ev){
     _upKey(ev);
     var kD = ev.which,
     note = Data.keyCodes.indexOf(kD);
-    console.log(kD, note);
     noteOff(note);
   }
 
@@ -95,6 +121,13 @@ var Synth = (function(){
     keyDown : keyDown,
     keyUp : keyUp,
     audioCtx : audioCtx,
+    WavUp : WavUp,
+    WavDown : WavDown,
+    wavDisp : wavDisp,
+    displayWave : displayWave,
+    setWave : setWave,
+    wavIndx : wavIndx,
+    waveTypes : waveTypes
   }
 
 })()
