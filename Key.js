@@ -17,6 +17,7 @@ var Key = (function(keyNum, Indx){
   }
 
   this.osc.connect(Synth.gain);
+  this.osc.connect(Synth.delay);
 
   if(!this.fired){
     this.fired = true;

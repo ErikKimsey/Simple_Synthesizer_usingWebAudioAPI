@@ -23,9 +23,18 @@ var Synth = (function(){
   wavDown = document.getElementById('WavDown'),
   wavDisp = document.getElementById('WavDisplay'),
   audioCtx = new (window.AudioContext || window.webkitAudioContext),
-  gain = audioCtx.createGain();
-
+  delay = audioCtx.createDelay(),
+  feedback = audioCtx.createGain(),
+  gain = audioCtx.createGain(),
+  filter = audioCtx.createBiquadFilter();
+  delay.delayTime.value = 0.5;
+  feedback.gain.value = 0.2;
+  filter.frequency.value = 2000;
+  delay.connect(feedback);
+  feedback.connect(filter);
+  filter.connect(delay);
   gain.connect(audioCtx.destination);
+  delay.connect(audioCtx.destination);
 
   function paintKeyElems(ind){
       var el = document.createElement('div');
@@ -127,7 +136,8 @@ var Synth = (function(){
     displayWave : displayWave,
     setWave : setWave,
     wavIndx : wavIndx,
-    waveTypes : waveTypes
+    waveTypes : waveTypes,
+    delay : delay
   }
 
 })()
