@@ -6,5 +6,5 @@
 */
 
 window.onload = function(){
-      Synth.createKeys();
+      // Synth.createKeys();
 };

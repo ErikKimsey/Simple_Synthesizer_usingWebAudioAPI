@@ -2,25 +2,62 @@ body {
   /*display: block;*/
   width:100%;
   height:100%;
-  background-color: rgba(251, 247, 244, 1);
+  /*background-color: rgba(251, 251, 251, 1);*/
+  background-color: white;
 }
 
-/* CONTROLS */
+h1 {
+  width:10%;
+  position: relative;
+  font-family: sans-serif;
+  z-index: -1;
+  background-color: orange;
+}
+
+
+@-webkit-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1.5s;
+    -moz-animation-duration:1.5s;
+    animation-duration:1.5s;
+}
+
+#canvas {
+
+}
+
 #GainWavCtrls {
 
 }
 
-#WavDisplay {
-
-}
-
 #woodshp {
-  /*position: absolute;;*/
+  position: relative;
   width: 50%;
-  margin-top: 1%;
-    margin-bottom: auto;
+  margin-top: -5%;
+  margin-bottom: auto;
   margin-left:25%;
   margin-right:auto;
+  z-index: 1;
 }
 
-/* END CONTROLS */
+#WavDisplay {
+  position: absolute;
+  z-index:2;
+  width:10%;
+  left:34%;
+  top:62%;
+
+
+}

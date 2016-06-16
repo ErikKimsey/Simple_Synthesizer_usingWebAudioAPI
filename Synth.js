@@ -36,19 +36,19 @@ var Synth = (function(){
   gain.connect(audioCtx.destination);
   delay.connect(audioCtx.destination);
 
-  function paintKeyElems(ind){
-      var el = document.createElement('div');
-      el.setAttribute('class', 'key');
-      el.setAttribute('id', ind);
-      console.log(el);
-      keyboard.appendChild(el);
-  }
+  // function paintKeyElems(ind){
+  //     var el = document.createElement('div');
+  //     el.setAttribute('class', 'key');
+  //     el.setAttribute('id', ind);
+  //     console.log(el);
+  //     keyboard.appendChild(el);
+  // }
 
-  function createKeys(){
-    for(var i = 40; i < 53; i++){
-      paintKeyElems(i-39);
-    }
-  }
+  // function createKeys(){
+  //   for(var i = 40; i < 53; i++){
+  //     // paintKeyElems(i-39);
+  //   }
+  // }
 
   function displayWave(indx){
     wavDisp.innerHTML = waveTypes[indx];
@@ -125,13 +125,11 @@ var Synth = (function(){
   }
 
   return {
-    createKeys : createKeys,
+    // createKeys : createKeys,
     gain : gain,
     keyDown : keyDown,
     keyUp : keyUp,
     audioCtx : audioCtx,
-    WavUp : WavUp,
-    WavDown : WavDown,
     wavDisp : wavDisp,
     displayWave : displayWave,
     setWave : setWave,
