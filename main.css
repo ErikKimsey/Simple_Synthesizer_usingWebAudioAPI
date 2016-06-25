@@ -58,6 +58,37 @@ h1 {
   width:10%;
   left:34%;
   top:62%;
+}
 
+#keyboard {
+  position: absolute;
+  top:70%;
+  margin-left:10%;
+  margin-right: auto;
+  width:auto;
+  height 250px;
+  z-index: 100;
+  display: flex;
+}
 
+.key {
+  height: 150px;
+  width:50px;
+  border: solid 3px gray;
+  margin:2px;
+}
+
+.key.white {
+  background-color: none;
+}
+
+.key.black {
+  background-color: gray;
+}
+
+#keyBdToggle {
+  background-color: brown;
+  color:white;
+  width:80px;
+  text-align: center;
 }
