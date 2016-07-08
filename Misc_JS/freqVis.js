@@ -1,5 +1,12 @@
 'use strict';
 
+/*
+** UNDER CONSTRUCTION **
+  Frequency Visual Analyser:
+  This will display real-time frequency analysis of the synth playback.
+*/
+
+
 var analyser = audioCtx.createAnalyser();
 
 //source.connect(analyser);
