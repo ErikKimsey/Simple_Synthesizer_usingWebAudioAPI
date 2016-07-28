@@ -16,6 +16,7 @@ var Key = (function(keyNum, Indx){
     return Math.pow(2, power)*440;
   }
 
+
   this.osc.connect(Synth.gain);
   this.osc.connect(Synth.delay);
 

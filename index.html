@@ -7,7 +7,7 @@
   <title>Web Audio Synth</title>
   <meta name="Synthesizer written using the Web Audio API." content="Dub Synth">
   <meta name="Erik Kimsey" content="Front-End Developer -> www.erikkimsey.com">
-
+<link href='https://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="main.css">
 
   <!--[if lt IE 9]>
@@ -16,16 +16,25 @@
 </head>
 <body class="fade-in">
 
-  <canvas id="canvas" width="100%" height="100%">
+<div id="bigO">
+  <canvas id="canvas" width="700px" height="360px">
   </canvas>
 
-<h1 id="h1">cuteDub</h1>
+<h1 id="h1"></h1>
 
   <div id="container">
-        <img src="images/woodshp.png" id="woodshp" alt="image" name="Image, wood shape" />
+        <!-- <img src="images/woodshp.png" id="woodshp" alt="image" name="Image, wood shape" /> -->
         <img src="images/mossDot.png" id="WavDisplay"/>
   </div>
-
+  <div id="instructs">
+    <!-- <h2 id="dotH1">DOTDUBx1 Synthesizer</h2> -->
+    <p id="instrP">
+      Press keys: 'z', 's', 'x', 'd', 'c', 'v', 'g', 'b', 'h', 'n', 'j', 'm', and    '.'  . </br>
+      Click the Lichen to change your synth's wavetype.
+    </p>
+    <h2>www.erikkimsey.com</h2>
+  </div>
+</div>
   <!-- <div id="keyBdToggle">
     KeyBoard
   </div> -->
@@ -87,11 +96,12 @@
 
 
 
-<!-- <script src="Misc_JS/keyboard.js"></script> -->
 <script src="data.js"></script>
+
 <script src="Key.js"></script>
 <script src="Synth.js"></script>
-<script src="app.js"></script>
+
+<!-- <script src="app.js"></script> -->
 
 </body>
 </html>

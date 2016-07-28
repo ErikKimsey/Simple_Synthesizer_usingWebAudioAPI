@@ -3,7 +3,7 @@ body {
   width:100%;
   height:100%;
   /*background-color: rgba(251, 251, 251, 1);*/
-  background-color: white;
+  background-color: black;
 }
 
 h1 {
@@ -11,7 +11,7 @@ h1 {
   position: relative;
   font-family: sans-serif;
   z-index: -1;
-  background-color: orange;
+  background-color: ;
 }
 
 
@@ -34,30 +34,103 @@ h1 {
     animation-duration:1.5s;
 }
 
+
+#bigO {
+  width:1000px;
+  height:900px;
+  background: -moz-radial-gradient( black, rgb(22, 22, 22), rgb(55,55,55)) repeat scroll 0% 0% transparent;
+background: radial-gradient( black, rgb(22, 22, 22), rgb(55,55,55));
+  border-top: 100px solid rgb(33,33,33);
+  border-bottom: 100px solid rgb(22,22,22);
+  border-radius: 2000px;
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
 #canvas {
-
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1000px;
 }
 
-#GainWavCtrls {
-
+#instructs {
+  position: absolute;
+  top:90%;
+  width:70%;
+  color:rgba(211,211,211,0.5);
+  text-shadow: 1px 1px 6px rgba(0,0,0, 0.8);
+  margin: 0;
+    top: 85%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
-#woodshp {
+#instrP, h2, h3 {
+  font-family: monospace;
+  color: rbga(222,222,222, 0.5);
+  text-align: center;
+}
+
+.hideP {
+  display: none;
+}
+
+.showP {
+  display: block;
+}
+
+#container {
+  position: absolute;
   position: relative;
-  width: 50%;
-  margin-top: -5%;
-  margin-bottom: auto;
-  margin-left:25%;
-  margin-right:auto;
-  z-index: 1;
+  left:80%;
+  top:5%;
+  width:20%;
+  height:auto;
+  margin: 0;
+
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 #WavDisplay {
   position: absolute;
-  z-index:2;
-  width:10%;
-  left:34%;
-  top:62%;
+  width:100px;
+  /*left:34%;
+  top:62%;*/
+  border: solid 1px rgba(18,18,18,0.5);
+  -o-transition:.9s;
+-ms-transition:.9s;
+-moz-transition:.9s;
+-webkit-transition:.9s;
+/* ...and now for the proper property */
+transition:.9s;
+margin: 0;
+
+  top: 10%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+#WavDisplay:hover {
+  position: absolute;;
+  width:100px;
+  /*left:34%;
+  top:62%;*/
+  border: solid 10px #CCFFE5;
+  border-radius: 100px;
 }
 
 #keyboard {
