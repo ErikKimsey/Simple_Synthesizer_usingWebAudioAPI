@@ -26,6 +26,9 @@ var Synth = (function(){
   wavUp = document.getElementById('WavUp'),
   wavDown = document.getElementById('WavDown'),
   wavDisp = document.getElementById('WavDisplay'),
+
+  /////////////////////////
+  // AUDIO GRAPH : BEGIN //
   audioCtx = new (window.AudioContext || window.webkitAudioContext),
   analyser = audioCtx.createAnalyser(),
   delay = audioCtx.createDelay(),
@@ -53,8 +56,8 @@ var Synth = (function(){
   var bufferLength = analyser.frequencyBinCount;
   var dataArray = new Uint8Array(bufferLength);
   console.log(analyser);
-
-
+// AUDIO GRAPH : END //
+///////////////////////
 
 // VISUAL ANALYSER : BEGIN
 //

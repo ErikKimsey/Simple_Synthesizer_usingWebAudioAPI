@@ -16,13 +16,17 @@ Use
 While remarkably ugly, you may still play this synthesizer!
 
 In order to play around with the synthesizer:
-1. Download this repository,
-2. Open the 'index.html' file in Chrome or Firefox,
-3. Use the 'z, s, x, d, c, v, g, b, h, n, j, m ,[,]' keys on your desktop/laptop keyboard.
-4. Click the little circular "mossy" object to change synth wave-types (sine, square, triangle, sawtooth).
+1. Download the zip repository and unpack,
+2. Crank up your favorite NodeJS server (I use IndexZero's "http-server"),
+3. Navigate to appropriate address/port (pref. in Chrome; been having issues in Firefox),
+4. Use the 'z, s, x, d, c, v, g, b, h, n, j, m ,[,]' keys on your desktop/laptop keyboard.
+5. Click the little circular "mossy" object to change synth wave-types (sine, square, triangle, sawtooth).
 
 Enjoy!
 
-Notes
-----------
-This project is in its very infancy, 2 days old as of May 18, 2016.  That being said, at the moment, the application can be played using keyboard keys, beginning with "z". In the following days, I will be further consolidating majority of code into a single file. Beyond that, a chic UI is being designed and will be applied -as it stands, the UI is neither chic nor "designed".
+Thanks for taking the time to visit my Github account and play with one of my apps.
+-----------------------------------------------------------------------------------
+
+Erik Kimsey
+www.erikkimsey.com
+I'm available for full-time, contract, or temp hire!
