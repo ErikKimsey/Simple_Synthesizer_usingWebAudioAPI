@@ -28,6 +28,6 @@ Thanks for taking the time to visit my Github account and play with one of my ap
 -----------------------------------------------------------------------------------
 
 Erik Kimsey
-erikkimsey.com
+
 [erikkimsey.com](#erikkimsey.com)
 I'm available for full-time, contract, or temp hire!
